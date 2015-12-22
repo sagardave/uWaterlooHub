@@ -15,11 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import com.app.sagar.uwaterloohub.R;
+
+import com.app.sagar.uwaterloohub.Fragments.HomeFragment;
 import com.app.sagar.uwaterloohub.Fragments.MyFragment;
 import com.app.sagar.uwaterloohub.Fragments.SampleFragment;
 import com.app.sagar.uwaterloohub.Fragments.SlidingTabsFragment;
-import com.app.sagar.uwaterloohub.Objects.DrawerRow;
+import com.app.sagar.uwaterloohub.Models.DrawerRow;
 import com.app.sagar.uwaterloohub.ui.SlidingTabLayout;
 
 import java.util.ArrayList;
@@ -72,7 +73,7 @@ public class MainActivity extends ActionBarActivity {
         });
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setTitle(names[0]);
 
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -91,7 +92,7 @@ public class MainActivity extends ActionBarActivity {
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment, SlidingTabsFragment.getInstance(0))
+                    .replace(R.id.fragment, HomeFragment.getInstance(0))
                     .commit();
         }
 
@@ -173,7 +174,7 @@ public class MainActivity extends ActionBarActivity {
         switch(pos){
 
             case 0:
-                newFragment = SlidingTabsFragment.getInstance(0);
+                newFragment = HomeFragment.getInstance(0);
                 break;
             case 1:
                 newFragment = MyFragment.getInstance(0);

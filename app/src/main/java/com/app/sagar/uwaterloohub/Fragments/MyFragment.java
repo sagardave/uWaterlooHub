@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.sagar.uwaterloohub.Adapters.RecyclerViewAdapter;
-import com.app.sagar.uwaterloohub.Objects.RecyclerViewRow;
+import com.app.sagar.uwaterloohub.Models.RecyclerViewRow;
 import com.app.sagar.uwaterloohub.R;
 
 import java.util.ArrayList;

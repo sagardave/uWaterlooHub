@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.app.sagar.uwaterloohub.R;
-import com.app.sagar.uwaterloohub.Objects.DrawerRow;
+
+import com.app.sagar.uwaterloohub.Models.DrawerRow;
 
 import java.util.List;
 

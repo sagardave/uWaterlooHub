@@ -30,7 +30,7 @@ public class SlidingTabsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        View layout = inflater.inflate(R.layout.l_sliding_tabs_fragment, container, false);
+        View layout = inflater.inflate(R.layout.l_home_fragment, container, false);
         mPager = (ViewPager) layout.findViewById(R.id.pager);
         mPager.setAdapter(new MyPagerAdapter((getChildFragmentManager())));
         mTabs = (SlidingTabLayout) layout.findViewById(R.id.tabs);

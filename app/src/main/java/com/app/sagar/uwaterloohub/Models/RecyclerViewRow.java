@@ -1,4 +1,4 @@
-package com.app.sagar.uwaterloohub.Objects;
+package com.app.sagar.uwaterloohub.Models;
 
 /**
  * Created by SagarkumarDave on 10/19/2015.
