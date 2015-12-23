@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.app.sagar.uwaterloohub.Fragments.AllInfoSessionFragment;
 import com.app.sagar.uwaterloohub.Fragments.HomeFragment;
 import com.app.sagar.uwaterloohub.Fragments.MyFragment;
 import com.app.sagar.uwaterloohub.Fragments.SampleFragment;
@@ -187,7 +188,7 @@ public class MainActivity extends ActionBarActivity {
                 newFragment = HomeFragment.getInstance(0);
                 break;
             case 1:
-                newFragment = MyFragment.getInstance(0);
+                newFragment = AllInfoSessionFragment.getInstance(0);
                 break;
             case 2:
                 newFragment = MyFragment.getInstance(0);

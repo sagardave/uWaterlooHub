@@ -81,8 +81,9 @@ public class AllInfoSessionFragment extends Fragment {
             Gson gson = new Gson();
             InfoSession infoSession;
             infoSession = gson.fromJson(String.valueOf(subObj), InfoSession.class);
-
-            infoSessions.add(infoSession);
+            if(!infoSession.getEmployer().equals("No info sessions")){
+                infoSessions.add(infoSession);
+            }
         }
 
         return infoSessions;

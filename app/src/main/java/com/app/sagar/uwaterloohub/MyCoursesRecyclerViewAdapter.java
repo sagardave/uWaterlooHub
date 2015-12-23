@@ -43,7 +43,6 @@ public class MyCoursesRecyclerViewAdapter extends RecyclerView.Adapter<MyCourses
     public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
         RecyclerViewRow current = data.get(i);
         myViewHolder.tv.setText(current.title);
-        myViewHolder.iv.setImageResource(current.iconId);
     }
 
     @Override

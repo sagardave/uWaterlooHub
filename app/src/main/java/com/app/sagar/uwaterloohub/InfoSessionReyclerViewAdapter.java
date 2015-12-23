@@ -36,7 +36,7 @@ public class InfoSessionReyclerViewAdapter extends RecyclerView.Adapter<InfoSess
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = inflater.inflate(R.layout.recycler_view_row, viewGroup, false);
+        View view = inflater.inflate(R.layout.row_info_session, viewGroup, false);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
@@ -44,6 +44,9 @@ public class InfoSessionReyclerViewAdapter extends RecyclerView.Adapter<InfoSess
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
         InfoSession current = data.get(i);
+        myViewHolder.employerName.setText(current.getEmployer());
+        myViewHolder.date.setText(current.getDate());
+        myViewHolder.location.setText(current.getLocation());
     }
 
     @Override
@@ -52,9 +55,10 @@ public class InfoSessionReyclerViewAdapter extends RecyclerView.Adapter<InfoSess
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView tv;
-        ImageView iv;
-        ImageView remove;
+        TextView employerName;
+        TextView date;
+        TextView location;
+        ImageView favBtn;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -66,12 +70,11 @@ public class InfoSessionReyclerViewAdapter extends RecyclerView.Adapter<InfoSess
                 }
             });
 
-            tv = (TextView) itemView.findViewById(R.id.textView);
-            iv = (ImageView) itemView.findViewById(R.id.image);
-            remove = (ImageView) itemView.findViewById(R.id.remove_img);
-            remove.setOnClickListener(this);
+            employerName = (TextView) itemView.findViewById(R.id.employerName);
+            date = (TextView) itemView.findViewById(R.id.date);
+            location = (TextView) itemView.findViewById(R.id.location);
+            favBtn = (ImageView) itemView.findViewById(R.id.favBtn);
         }
-
 
         @Override
         public void onClick(View v) {
