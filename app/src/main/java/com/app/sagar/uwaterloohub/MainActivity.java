@@ -150,12 +150,23 @@ public class MainActivity extends ActionBarActivity {
     public List<DrawerRow> getData(){
         List<DrawerRow> data = new ArrayList();
 
-
         for(int i = 0; i < names.length; i++){
             DrawerRow current = new DrawerRow();
             current.name = names[i];
             if(current.name.equals("Home")){
-                current.iconId = R.mipmap.ic_launcher;
+                current.iconId = R.mipmap.ic_home_black_24dp;
+            }
+            else if(current.name.equals("Info Sessions")){
+                current.iconId = R.mipmap.ic_date_range_black_24dp;
+            }
+            else if(current.name.equals("News")){
+                current.iconId = R.mipmap.ic_description_black_24dp;
+            }
+            else if(current.name.equals("Settings")){
+                current.iconId = R.mipmap.ic_settings_black_24dp;
+            }
+            else if(current.name.equals("About")){
+                current.iconId = R.mipmap.ic_error_outline_black_24dp;
             }
             else{
                 current.iconId = R.mipmap.ic_launcher;
@@ -169,8 +180,7 @@ public class MainActivity extends ActionBarActivity {
     public void updateFragment(int pos) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment newFragment = SampleFragment.getInstance(0);
-        newFragment = SlidingTabsFragment.getInstance(0);
+        Fragment newFragment = SlidingTabsFragment.getInstance(0);
         switch(pos){
 
             case 0:

@@ -94,10 +94,10 @@ public class HomeFragment extends Fragment implements SearchView.OnQueryTextList
 
         @Override
         public Fragment getItem(int i) {
-            if(tabNames[i].equals("Courses")){
+            if(tabNames[i].equals("My Courses")){
                 return MyCoursesFragment.getInstance(i);
             }
-            else if(i == 1){
+            else if(tabNames[i].equals("Info Sessions")){
                 return SampleFragment.getInstance(i);
             }
             return SampleFragment.getInstance(i);

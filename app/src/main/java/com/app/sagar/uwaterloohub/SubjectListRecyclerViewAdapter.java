@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,16 +52,18 @@ public class SubjectListRecyclerViewAdapter extends RecyclerView.Adapter<Subject
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView tv;
-
+        CardView card;
         public MyViewHolder(View itemView) {
             super(itemView);
 
             tv = (TextView) itemView.findViewById(R.id.name);
-            tv.setOnClickListener(this);
+            card = (CardView) itemView.findViewById(R.id.card_view);
+            card.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
+
             CourseListFragment myFragment = new CourseListFragment();
 
             Bundle args = new Bundle();

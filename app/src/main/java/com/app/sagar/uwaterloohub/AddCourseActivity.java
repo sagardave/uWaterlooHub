@@ -16,7 +16,7 @@ import java.util.Date;
 /**
  * Created by SagarkumarDave on 12/22/2015.
  */
-public class AddCourseActivity extends ActionBarActivity implements SearchView.OnQueryTextListener {
+public class AddCourseActivity extends ActionBarActivity {
     Toolbar toolbar;
 
     @Override
@@ -36,25 +36,4 @@ public class AddCourseActivity extends ActionBarActivity implements SearchView.O
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_search, menu);
-        // Retrieve the SearchView and plug it into SearchManager
-        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
-        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setOnQueryTextListener(this);
-
-        return true;
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
-    }
 }

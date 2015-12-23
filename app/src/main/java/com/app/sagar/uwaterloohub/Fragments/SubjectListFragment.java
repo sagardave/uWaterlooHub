@@ -1,13 +1,18 @@
 package com.app.sagar.uwaterloohub.Fragments;
 
+import android.app.SearchManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -31,7 +36,7 @@ import java.util.List;
 /**
  * Created by SagarkumarDave on 12/22/2015.
  */
-public class SubjectListFragment extends Fragment {
+public class SubjectListFragment extends Fragment implements SearchView.OnQueryTextListener {
     private SubjectListRecyclerViewAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private String SUBJECTS_URL = "https://api.uwaterloo.ca/v2/codes/subjects.json?key=b68407aa91907ad3d3cd47c80282ae56";
@@ -80,4 +85,23 @@ public class SubjectListFragment extends Fragment {
         return subjectData;
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        inflater.inflate(R.menu.menu_search, menu);
+        // Retrieve the SearchView and plug it into SearchManager
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+        searchView.setOnQueryTextListener(this);
+
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
 }

@@ -43,8 +43,15 @@ public class CourseListRecyclerViewAdapter extends RecyclerView.Adapter<CourseLi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        String current = courseListData.get(position).getTitle();
-        holder.tv.setText(current);
+        holder.name.setText(courseListData.get(position).getTitle());
+
+        StringBuilder courseCode = new StringBuilder();
+        courseCode.append(courseListData.get(position).getSubject());
+        courseCode.append(" ");
+        courseCode.append(courseListData.get(position).getCatalog_number());
+
+        holder.code.setText(courseCode);
+
     }
 
     @Override
@@ -53,13 +60,17 @@ public class CourseListRecyclerViewAdapter extends RecyclerView.Adapter<CourseLi
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        TextView tv;
+        TextView code;
+        TextView name;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            tv = (TextView) itemView.findViewById(R.id.name);
-            tv.setOnClickListener(this);
+            code = (TextView) itemView.findViewById(R.id.code);
+
+            name = (TextView) itemView.findViewById(R.id.name);
+            name.setOnClickListener(this);
+
         }
 
         @Override

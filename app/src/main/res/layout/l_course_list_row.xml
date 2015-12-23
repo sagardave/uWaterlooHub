@@ -1,21 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    android:layout_marginBottom="1dp"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp"
-        android:padding="8dp"
-        android:text="Sample"
-        android:textColor="@color/primaryText"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="5dp"
+                android:textSize="16dp"
+                android:textColor="@color/primaryText"
+                android:text="ECE 222"
+                android:layout_alignParentTop="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="5dp"
+                android:textSize="16dp"
+                android:textColor="@color/primaryText"
+                android:text="-"
+                android:id="@+id/textView2"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/code" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="5dp"
+                android:textSize="16dp"
+                android:maxLines="1"
+                android:textColor="@color/primaryText"
+                android:text="Sample"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/textView2" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>
